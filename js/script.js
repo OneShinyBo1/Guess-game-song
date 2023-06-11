@@ -128,6 +128,7 @@ function playAudio() {
     if (audio.paused) {
         setTimeout(function(){
             // const audioIndex = Math.floor(Math.random() * audioArray.length);
+
             const audio = new Audio(selectedName.song);
             console.log(audio);
             audio.play();
