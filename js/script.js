@@ -2,39 +2,28 @@
 // Array of games, games are objects with name, genre and year
 // TODO: Add more (actual) games
 let names = [
-    // {game: "Titas", genre: "RPG", year: 2021},
-    // {game: "Jonas", genre: "RPG", year: 2021},
-    {game: "Dark souls", genre: "RPG", year: 2011},
-    {game: "Team Fortress 2" , genre: "Shooter", year: 2007},
-    {game: "Among Us" , genre: "Social deduction", year: 2018},
-    // "Brawlhalla",
-    // "Crab Game",
-    // "Ecolyptus plant",
-    // "France",
-    // "Game",
-    // "Hardstone",
-    // "Insolent",
-    // "James",
-    // "Krab Game",
-    // "Lebron James",
-    // "Minecraft",
-    // "Noita",
-    // "Oman",
-    // "Prince Horace",
-    // "Qatar",
-    // "Rainbow Six Siege",
-    // "Stan",
-    // "Uganda",
-    // "Vatican City",
-    // "Washroom",
-    // "Xenomorph",
-    // "Yeah",
-    // "Zaza"
+    // {game: "Dark souls", genre: "RPG", year: 2011, song: "Audio/DarkSouls.mp3"},  
+    // {game: "Bloodborne", genre: "RPG", year: 2015, song: "Audio/Bloodborne.mp3"},
+    // {game: "Team Fortress 2" , genre: "Shooter", year: 2007, song: "Audio/TF2.mp3"},
+    // {game: "Among Us" , genre: "Social deduction", year: 2018, song: "Audio/AmongUs.mp3"},
+    // {game: "Minecraft" , genre: "Sandbox", year: 2011, song: "Audio/Minecraft.mp3"},
+    {game: "Terraria" , genre: "Sandbox", year: 2011, song: "Audio/Terraria.mp3"},
+    {game: "Counter-Strike: Global Offensive" , genre: "Shooter", year: 2012, song: "Audio/CSGO.mp3"},
+    // {game: "Grand Theft Auto V" , genre: "Action-adventure", year: 2013, song: "Audio/GTA5.mp3"},
+    // {game: "The Elder Scrolls V: Skyrim" , genre: "RPG", year: 2011, song: "Audio/Skyrim.mp3"},
+    // {game: "Portal 2" , genre: "Puzzle", year: 2011, song: "Audio/Portal2.mp3"},
+    // {game: "Half-Life 2" , genre: "Shooter", year: 2004, song: "Audio/HalfLife2.mp3"},
+    // {game: "The Witcher 3: Wild Hunt" , genre: "RPG", year: 2015, song: "TheWitcher3.mp3"},
+    // {game: "Fallout: New Vegas" , genre: "RPG", year: 2010, song: "FalloutNewVegas.mp3"},
+
+
+
 ]
 
 // Get game names from array by using map
 var gameName = names.map(a => a.game);
 console.log(gameName);
+
 
 
 // Sort names in ascending order
@@ -95,18 +84,66 @@ function removeElements(){
 const element = document.getElementById("btn");
 element.addEventListener("click", confirmName);
 
-
+var attempts = 1;
 // Checks if game is correct
 function confirmName(){
+
+    // Checks if user has run out of attempts
+if(attempts < 5){
+        
+    // variable for the user input
     let name = document.getElementById("input").value;
-    if(name == selectedName.game){
-        alert("Correct!");
-    } else {
-        alert("Wrong!");
-    }
+
+    // Checks if user has written something
+    if (gameName.includes(name)){ 
+
+        // Checks if it is correct
+        if(name == selectedName.game){
+            alert("Correct!");
+        } else {
+            attempts+= 1.5;
+            console.log(attempts);
+            alert("Wrong!");
+        }
+
+    }else{
+        alert("You have to write something!");
+     }
+
+}else{
+    alert("You have no more attempts!");
+    document.getElementById("btn").disabled = true;
+}
+    // Prevents the page from reloading
     event.preventDefault();
 }
 
 
+// Audio
+var audio = document.createElement("audio");
 
+
+// Plays specific amount of audio based on attempts
+function playAudio() {
+    if (audio.paused) {
+        setTimeout(function(){
+            // const audioIndex = Math.floor(Math.random() * audioArray.length);
+            const audio = new Audio(selectedName.song);
+            console.log(audio);
+            audio.play();
+
+            setTimeout(function(){
+                audio.pause();
+                audio.currentTime = 0;
+            }, attempts*3000);
+        }, 2);
+
+    
+    }else{
+
+        audio.pause();
+        audio.currentTime = 0;
+}
+event.preventDefault();
+}
 
