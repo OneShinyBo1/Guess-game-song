@@ -11,10 +11,12 @@ Before the name of your audio file, put Audio/
 
 
 ## If missing database
-Put in this code in phpmyadmin 
+In phpmyadmin:
+
 Create a database with the name phpproject01
 
 Go into the database and enter in the sql code
+
     CREATE TABLE users (
     usersId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
     usersName varchar(128) NOT NULL,
@@ -22,6 +24,7 @@ Go into the database and enter in the sql code
     usersUid varchar(128) NOT NULL,
     usersPwd varchar(128) NOT NULL
 );
+
 And press go.
 
 The login system should then work.
