@@ -17,7 +17,7 @@ session_start();
     <ul>
         <div id="navbar">
         <li class="navContent"><a href="index.php">Home</a></li>
-        <li class="navContent"><a href="about.php">About</a></li>
+        <li class="navContent"><a href="faq.php">FAQ</a></li>
         <?php 
             if (isset($_SESSION["useruid"])) {
                 echo "<li class='navContent'><a href='game.php'>Game</a></li>";
