@@ -16,16 +16,16 @@ session_start();
 
     <ul>
         <div id="navbar">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="about.php">About</a></li>
+        <li class="navContent"><a href="index.php">Home</a></li>
+        <li class="navContent"><a href="about.php">About</a></li>
         <?php 
             if (isset($_SESSION["useruid"])) {
-                echo "<li><a href='game.php'>Game</a></li>";
-                echo "<li><a href='includes/logout.inc.php'>Log Out</a></li>";
+                echo "<li class='navContent'><a href='game.php'>Game</a></li>";
+                echo "<li class='navContent'><a href='includes/logout.inc.php'>Log Out</a></li>";
             }
             else {
-                echo "<li><a href='signup.php'>Sign Up</a></li>";
-                echo "<li><a href='login.php'>Log In</a></li>";
+                echo "<li class='navContent'><a href='signup.php'>Sign Up</a></li>";
+                echo "<li class='navContent'><a href='login.php'>Log In</a></li>";
             }
         ?>
         </div>

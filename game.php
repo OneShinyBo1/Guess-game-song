@@ -10,10 +10,10 @@ if (!isset($_SESSION["useruid"])) {
 }
 ?>
 
+<br>
+<br>
+
     <h1>Guess the song</h1>
-    
-
-
     
     <form autocomplete="off">
         <div>
