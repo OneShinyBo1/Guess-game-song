@@ -7,8 +7,10 @@ let names = [
     // {game: "Team Fortress 2" , genre: "Shooter", year: 2007, song: "Audio/TF2.mp3"},
     // {game: "Among Us" , genre: "Social deduction", year: 2018, song: "Audio/AmongUs.mp3"},
     // {game: "Minecraft" , genre: "Sandbox", year: 2011, song: "Audio/Minecraft.mp3"},
-    {game: "Terraria" , genre: "Sandbox", year: 2011, song: "Audio/Terraria.mp3"},
-    {game: "Counter-Strike: Global Offensive" , genre: "Shooter", year: 2012, song: "Audio/CSGO.mp3"},
+    {game: "Terraria" , genre: "Sandbox", year: 2011, song: "Audio/Song3.mp3"},
+    {game: "Counter-Strike: Global Offensive" , genre: "Shooter", year: 2012, song: "Audio/Song1.mp3"},
+    {game: "World of Warcraft" , genre: "MMORPG", year: 2004, song: "Audio/Song4.mp3"},
+    {game: "Dark souls 3" , genre: "RPG", year: 2016, song: "Audio/Song2.mp3"},
     // {game: "Grand Theft Auto V" , genre: "Action-adventure", year: 2013, song: "Audio/GTA5.mp3"},
     // {game: "The Elder Scrolls V: Skyrim" , genre: "RPG", year: 2011, song: "Audio/Skyrim.mp3"},
     // {game: "Portal 2" , genre: "Puzzle", year: 2011, song: "Audio/Portal2.mp3"},
@@ -21,20 +23,18 @@ let names = [
 ]
 
 // Get game names from array by using map
+
 var gameName = names.map(a => a.game);
-console.log(gameName);
-
-
 
 // Sort names in ascending order
 let sortedNames = gameName.sort();
-console.log(sortedNames);
+
 // User input
 let input = document.getElementById("input");
 
 // Get random name from array
 var selectedName = names[Math.floor(Math.random()*names.length)];
-console.log(selectedName);
+
 
 // Function to display names
 // Execute Function on Keyup
@@ -101,7 +101,7 @@ if(attempts < 5){
         if(name == selectedName.game){
             alert("Correct!");
         } else {
-            attempts+= 1.5;
+            attempts+= 1;
             console.log(attempts);
             alert("Wrong!");
         }

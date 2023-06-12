@@ -2,9 +2,14 @@
     include_once 'header.php';
 ?>
 
-<?php 
+
+        <?php 
             if (isset($_SESSION["useruid"])) {
-                echo "<p>Hello mr ". $_SESSION["useruid"] ."</p>";
+                echo "<h1>Hello mr ". $_SESSION["useruid"] ."</h1>";
+            }
+            else {
+                echo "<h1>Welcome Guest</h1>";
+                echo "<h3>Please sign up or log in to play the game</h3>";
             }
         ?>
 

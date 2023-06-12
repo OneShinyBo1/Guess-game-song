@@ -5,6 +5,8 @@
     <h1>Frequently asked questions</h1>
 
     <div class="faq">
+        <br>
+        <br>
         <h2>What is this?</h2>
         <p>This is a game where you have to guess the game the song comes from</p>
 
